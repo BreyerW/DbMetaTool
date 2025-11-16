@@ -19,19 +19,19 @@ Usage examples
   - `DbMetaTool update-db --connection-string "<conn>" --scripts-dir "C:\scripts"`
 
 Installation
-	- Install Firebird 5.0 server
-	- Ensure `isql.exe` is accessible (set `ISQL_PATH` if needed)
-	- Create user with necessary privileges for DB creation and updates. If you use username and/or password different from default (localuser), set `FB_SYS_USER` and `FB_SYS_PASS` environment variables.
-		- One possible way is to create dummy (empty) database using `isql` or `IBExpert` and create user with `CREATE USER` statement followed with appropiate privilege grants (CREATE DOMAIN, CREATE TABLE, CREATE PROCEDURE).
-	- Build from source using any IDE supporting .NET 8.0 SDK.
-	- Open terminal, navigate to project directory and run one of `Usage examples`.
-		- Included sample masterscript.sql generated with AI that can be used to test DB creation and updates. It's more complex than necessary (includes constraints, primary keys etc.) as such first export won't be mirror copy, but subsequent tests on outputted files should create exact copies.
-		- Suggested order of operations:
-			1. `build-db` with `masterscript.sql`
-			2. `export-scripts` to get `metadata.sql`
-			3. `update-db` on different db with `metadata.sql`
-				- Note: if existing db already has same objects as exported db, `update-db` may fail due to object name conflicts. Failure will cause rollback attempt.
-			4. Optionally repeat steps 1-2 on outputted `metadata.sql` and new db from previous steps to verify consistency.
+- Install Firebird 5.0 server
+- Ensure `isql.exe` is accessible (set `ISQL_PATH` if needed)
+- Create user with necessary privileges for DB creation and updates. If you use username and/or password different from default (localuser), set `FB_SYS_USER` and `FB_SYS_PASS` environment variables.
+	- One possible way is to create dummy (empty) database using `isql` or `IBExpert` and create user with `CREATE USER` statement followed with appropiate privilege grants (CREATE DOMAIN, CREATE TABLE, CREATE PROCEDURE).
+- Build from source using any IDE supporting .NET 8.0 SDK.
+- Open terminal, navigate to project directory and run one of `Usage examples`.
+	- Included sample masterscript.sql generated with AI that can be used to test DB creation and updates. It's more complex than necessary (includes constraints, primary keys etc.) as such first export won't be mirror copy, but subsequent tests on outputted files should create exact copies.
+	- Suggested order of operations:
+	1. `build-db` with `masterscript.sql`
+	2. `export-scripts` to get `metadata.sql`
+	3. `update-db` on different db with `metadata.sql`
+	- Note: if existing db already has same objects as exported db, `update-db` may fail due to object name conflicts. Failure will cause rollback attempt.
+	4. Optionally repeat steps 1-2 on outputted `metadata.sql` and new db from previous steps to verify consistency.
 
 Environment variables (used by the program)
 - `ISQL_PATH` — Path to Firebird `isql.exe`. Default: `C:\Program Files\Firebird\Firebird_5_0\isql.exe`
