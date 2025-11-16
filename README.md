@@ -25,7 +25,7 @@ Installation
 	- One possible way is to create dummy (empty) database using `isql` or `IBExpert` and create user with `CREATE USER` statement followed with appropiate privilege grants (CREATE DOMAIN, CREATE TABLE, CREATE PROCEDURE).
 - Build from source using any IDE supporting .NET 8.0 SDK.
 - Open terminal, navigate to project directory and run one of `Usage examples`.
-	- Included sample masterscript.sql generated with AI that can be used to test DB creation and updates. It's more complex than necessary (includes constraints, primary keys etc.) as such first export won't be mirror copy, but subsequent tests on outputted files should create exact copies.
+	- Included sample `masterscript.sql` generated with AI that can be used to test DB creation and updates. It's more complex than necessary (includes constraints, primary keys etc.) as such first export won't be mirror copy, but subsequent tests on outputted files should create exact copies.
 	- Suggested order of operations:
 		1. `build-db` with `masterscript.sql`
 		2. `export-scripts` to get `metadata.sql`
