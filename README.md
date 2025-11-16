@@ -27,11 +27,11 @@ Installation
 - Open terminal, navigate to project directory and run one of `Usage examples`.
 	- Included sample masterscript.sql generated with AI that can be used to test DB creation and updates. It's more complex than necessary (includes constraints, primary keys etc.) as such first export won't be mirror copy, but subsequent tests on outputted files should create exact copies.
 	- Suggested order of operations:
-	1. `build-db` with `masterscript.sql`
-	2. `export-scripts` to get `metadata.sql`
-	3. `update-db` on different db with `metadata.sql`
-	- Note: if existing db already has same objects as exported db, `update-db` may fail due to object name conflicts. Failure will cause rollback attempt.
-	4. Optionally repeat steps 1-2 on outputted `metadata.sql` and new db from previous steps to verify consistency.
+		1. `build-db` with `masterscript.sql`
+		2. `export-scripts` to get `metadata.sql`
+		3. `update-db` on different db with `metadata.sql`
+			- Note: if existing db already has same objects as exported db, `update-db` may fail due to object name conflicts. Failure will cause rollback attempt.
+		4. Optionally repeat steps 1-2 on outputted `metadata.sql` and new db from previous steps to verify consistency.
 
 Environment variables (used by the program)
 - `ISQL_PATH` — Path to Firebird `isql.exe`. Default: `C:\Program Files\Firebird\Firebird_5_0\isql.exe`
