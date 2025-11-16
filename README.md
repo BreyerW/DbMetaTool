@@ -22,7 +22,7 @@ Installation
 - Install Firebird 5.0 server
 - Ensure `isql.exe` is accessible (set `ISQL_PATH` if needed)
 - Create user with necessary privileges for DB creation and updates. If you use username and/or password different from default (localuser), set `FB_SYS_USER` and `FB_SYS_PASS` environment variables.
-	- One possible way is to create dummy (empty) database using `isql` or `IBExpert` and create user with `CREATE USER` statement followed with appropiate privilege grants (CREATE DOMAIN, CREATE TABLE, CREATE PROCEDURE).
+	- One possible way is to create dummy (empty) database using `isql` or `IBExpert`, log in to that db (eg. `isql -user sysdba "C:\db\testdb\DUMMY.FDB"`) and create user with `CREATE USER` statement followed with appropiate privilege grants (CREATE DOMAIN, CREATE TABLE, CREATE PROCEDURE).
 - Build from source using any IDE supporting .NET 8.0 SDK.
 - Open terminal, navigate to project directory and run one of `Usage examples`.
 	- Included sample `masterscript.sql` generated with AI that can be used to test DB creation and updates. It's more complex than necessary (includes constraints, primary keys etc.) as such first export won't be mirror copy, but subsequent tests on outputted files should create exact copies.
